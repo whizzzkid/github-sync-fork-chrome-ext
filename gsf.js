@@ -1,4 +1,4 @@
-let GSF = {} || GSF;
+let GSF = {};
 
 GSF.Stages = {};
 GSF.Stages.CREATE_PR_STAGE = '#sync-fork-pr-stage';
