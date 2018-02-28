@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "GitHub Sync Fork",
+  "description": "One-Click Fork Sync",
+  "version": "0.1",
+  "permissions": [
+  "*://github.com/*"
+  ],
+  "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'",
+  "content_scripts": [
+    {
+      "matches": ["*://github.com/*"],
+      "js": ["gsf.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
