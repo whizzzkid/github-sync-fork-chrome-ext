@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "GitHub Sync Fork",
   "description": "One-Click Fork Sync",
-  "version": "0.1",
+  "version": "0.1.1",
   "permissions": [
   "*://github.com/*"
   ],

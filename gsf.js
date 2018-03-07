@@ -7,12 +7,17 @@ GSF.Messages = {};
 GSF.LoopTime = 10; // in ms.
 GSF.Messages.PR_TITLE = '[GSF] Syncing Fork';
 GSF.Messages.PR_BODY = 'This PR was automatically created using ' +
-  '[Sync Fork Chrome Extension](https://nishantarora.in/). If there ' +
-  'aren\'t any conflicts then this PR will be merged automatically else, ' +
+  '[Sync Fork Chrome Extension]' +
+  '(https://chrome.google.com/webstore/detail/github-sync-fork/' +
+  'omjaffmdnnkgmbbjmdalehkjcaklleii). If there aren\'t any conflicts ' +
+  'then this PR will be merged automatically else, ' +
   'you will need to resolve conflicts and merge manually.' +
   '\n\n' +
-  'If you\'re facing issues with this extension, please report them ' +
-  '[here](https://github.com/whizzzkid/github-sync-fork-chrome-ext/issues/new).' +
+  'If you\'re facing issues with this extension, please read the [wiki]' +
+  '(https://github.com/whizzzkid/github-sync-fork-chrome-ext/wiki) ' +
+  'first. If still facing an issue, report them ' +
+  '[here](https://github.com/whizzzkid/github-sync-fork-chrome-ext' +
+  '/issues/new).' +
   '\n\n' +
   '[Whizzzkid](https://nishantarora.in)';
 
