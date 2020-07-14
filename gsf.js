@@ -26,7 +26,8 @@ GSF.hitMeBabyOneMoreTime = function (func) {
 }
 
 GSF.generateUpdateUrl = function (upstream) {
-  var repoURI = document.querySelector('strong[itemprop="name"]').baseURI.match(/^[^\?]+/)[0];
+  var uriRegExp = /^https?\:\/\/github\.com\/[^\/]+\/[^\/]+/;
+  var repoURI = document.querySelector('strong[itemprop="name"]').baseURI.match(uriRegExp)[0];
   return repoURI + '/compare/master...' + upstream +
     this.Stages.CREATE_PR_STAGE;
 };
