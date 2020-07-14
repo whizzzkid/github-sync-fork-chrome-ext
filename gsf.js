@@ -21,8 +21,8 @@ GSF.Messages.PR_BODY = 'This PR was automatically created using ' +
   '\n\n' +
   '[Whizzzkid](https://nishantarora.in)';
 
-GSF.hitMeBabyOneMoreTime = function (func) {
-  setTimeout(func.bind(this), this.LoopTime);
+GSF.hitMeBabyOneMoreTime = function (func, timeout = this.LoopTime) {
+  setTimeout(func.bind(this), timeout);
 }
 
 GSF.generateUpdateUrl = function (upstream) {
@@ -64,7 +64,6 @@ GSF.isUpdateAvailable = function () {
     }
 
     if (info) {
-        console.log(info);
       var updateRegExp = /(\d+) commits behind ([^\.]+)/g;
       [message, commits, upstream] = updateRegExp.exec(info.innerText);
       this.renderButton(commits, upstream);
@@ -128,7 +127,7 @@ GSF.onUrlChangeListener = function () {
   if (this.Location.href != window.location.href) {
     console.log('Location changed!');
     this.Location = JSON.parse(JSON.stringify(window.location));
-    this.init();
+    this.hitMeBabyOneMoreTime(this.init, 1000);
   }
   this.hitMeBabyOneMoreTime(this.onUrlChangeListener);
 };
