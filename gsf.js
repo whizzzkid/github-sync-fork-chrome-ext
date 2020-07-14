@@ -44,10 +44,28 @@ GSF.renderButton = function (count, upstream) {
 
 GSF.isUpdateAvailable = function () {
   if (!document.querySelector('a#gsf-butt')) {
-    var info = document.querySelectorAll('div.branch-infobar');
-    if (info.length == 1) {
+    var [ info ] = document.querySelectorAll('div.branch-infobar');
+    // new UI
+    if (!info) {
+        var [ filePanel ] = document.querySelectorAll('div.file-navigation');
+        var nextEl = filePanel.nextElementSibling;
+        for (let i = 0; i < 4; i++) {
+            if (nextEl.classList.contains('Box-body')) {
+                info = nextEl;
+                break;
+            } else {
+                if (!nextEl.nextElementSibling) {
+                    break;
+                }
+                nextEl = nextEl.nextElementSibling;
+            }
+        }
+    }
+
+    if (info) {
+        console.log(info);
       var updateRegExp = /(\d+) commits behind ([^\.]+)/g;
-      [message, commits, upstream] = updateRegExp.exec(info[0].innerText);
+      [message, commits, upstream] = updateRegExp.exec(info.innerText);
       this.renderButton(commits, upstream);
     }
     // will keep looking for the infobar.
