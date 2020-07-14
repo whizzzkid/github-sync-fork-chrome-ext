@@ -48,19 +48,19 @@ GSF.isUpdateAvailable = function () {
     var [ info ] = document.querySelectorAll('div.branch-infobar');
     // new UI
     if (!info) {
-        var [ filePanel ] = document.querySelectorAll('div.file-navigation');
-        var nextEl = filePanel.nextElementSibling;
-        for (let i = 0; i < 4; i++) {
-            if (nextEl.classList.contains('Box-body')) {
-                info = nextEl;
-                break;
-            } else {
-                if (!nextEl.nextElementSibling) {
-                    break;
-                }
-                nextEl = nextEl.nextElementSibling;
-            }
+      var [ filePanel ] = document.querySelectorAll('div.file-navigation');
+      var nextEl = filePanel.nextElementSibling;
+      for (let i = 0; i < 4; i++) {
+        if (nextEl.classList.contains('Box-body')) {
+          info = nextEl;
+          break;
+        } else {
+          if (!nextEl.nextElementSibling) {
+            break;
+          }
+          nextEl = nextEl.nextElementSibling;
         }
+      }
     }
 
     if (info) {
